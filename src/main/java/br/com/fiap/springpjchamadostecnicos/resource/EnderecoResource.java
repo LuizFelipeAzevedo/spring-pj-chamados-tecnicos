@@ -2,7 +2,6 @@ package br.com.fiap.springpjchamadostecnicos.resource;
 
 import br.com.fiap.springpjchamadostecnicos.entity.Endereco;
 import br.com.fiap.springpjchamadostecnicos.repository.EnderecoRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,9 +23,5 @@ public class EnderecoResource {
         return repo.findById(id).orElseThrow();
     }
 
-    @Transactional
-    @PostMapping
-    public Endereco save(@RequestBody Endereco acessorio) {
-        return repo.save(acessorio);
-    }
+
 }
